@@ -32,17 +32,6 @@ const Typography = createGlobalStyle`
     src: url(${InterSemiBold});
     font-style: normal;
   }
-  html{
-    font-family: 'Inter Regular';
-    color: var(--black);
-  }
-  *{
-    font-family: 'Inter Regular';
-    color: var(--black);
-  }
-  h1,h2,h3,h4,h5,h6{
-    font-family: 'Inter Medium'
-  }
 `;
 
 export default Typography;
