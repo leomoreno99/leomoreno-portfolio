@@ -4,6 +4,7 @@ import InterLight from '../assets/fonts/Inter-Light.ttf'
 import InterMedium from '../assets/fonts/Inter-Medium.ttf'
 import InterRegular from '../assets/fonts/Inter-Regular.ttf'
 import InterSemiBold from '../assets/fonts/Inter-SemiBold.ttf'
+import InterBold from '../assets/fonts/Inter-Bold.ttf'
 
 
 const Typography = createGlobalStyle`
@@ -32,17 +33,12 @@ const Typography = createGlobalStyle`
     src: url(${InterSemiBold});
     font-style: normal;
   }
-  html{
-    font-family: 'Inter Regular';
-    color: var(--black);
+  @font-face {
+    font-family: 'Inter Bold';
+    src: url(${InterBold});
+    font-style: normal;
   }
-  *{
-    font-family: 'Inter Regular';
-    color: var(--black);
-  }
-  h1,h2,h3,h4,h5,h6{
-    font-family: 'Inter Medium'
-  }
+  
 `;
 
 export default Typography;
