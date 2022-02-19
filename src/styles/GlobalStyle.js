@@ -6,6 +6,12 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     box-sizing: border-box;
   }
+
+*::selection {
+  background: var(--orange);
+  color: var(--beige)
+}
+
   :root{  
     --deep-dark: #1E1E1E;
     --beige: #E8E5E2;

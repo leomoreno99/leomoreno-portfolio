@@ -4,6 +4,7 @@ import InterLight from '../assets/fonts/Inter-Light.ttf'
 import InterMedium from '../assets/fonts/Inter-Medium.ttf'
 import InterRegular from '../assets/fonts/Inter-Regular.ttf'
 import InterSemiBold from '../assets/fonts/Inter-SemiBold.ttf'
+import InterBold from '../assets/fonts/Inter-Bold.ttf'
 
 
 const Typography = createGlobalStyle`
@@ -32,6 +33,12 @@ const Typography = createGlobalStyle`
     src: url(${InterSemiBold});
     font-style: normal;
   }
+  @font-face {
+    font-family: 'Inter Bold';
+    src: url(${InterBold});
+    font-style: normal;
+  }
+  
 `;
 
 export default Typography;
