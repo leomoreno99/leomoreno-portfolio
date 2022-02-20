@@ -24,9 +24,9 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Inter Regular';
     background-color: var(--beige);
   }
-  ul,li{
+  /* ul,li{
     list-style: none;
-  }
+  } */
   a{
     text-decoration: none;
   }
