@@ -31,15 +31,63 @@ const AboutSectionStyle = styled.div`
     display: flex;
     flex-wrap: wrap;
   }
+
+  .aboutSection__eduaction div {
+      display: flex;
+      justify-content: space-between
+  }
+
+  .aboutSection__eduaction{
+    margin-top: 20rem;
+
+    .aboutSection__eduaction__left,
+    .aboutSection__eduaction__right{
+        display: block;
+        width: 50%;
+        margin-top: 6.4rem;
+        margin-left: 6rem;
+        font-size: 2.2rem;
+        font-family: 'Inter Regular';
+    }
+    .aboutSection__eduaction__left span,
+    .aboutSection__eduaction__right span {
+        color: var(--gray);
+        font-family: 'Inter Regular';
+
+    }
+
+    .subrayado {
+        text-decoration: underline;
+        color: var(--black);
+    }
+  }
   @media only screen and (max-width: 1200px) {
     .aboutSection {
       margin-top: 15rem;
+    }
+    .aboutSection__eduaction {
+        margin-top: 15rem;
     }
   }
   @media only screen and (max-width: 768px) {
     .aboutSection {
       margin-top: 0px;
     }
+    .aboutSection__eduaction {
+        margin-top: 8rem;
+    }
+    .aboutSection__eduaction div {
+        flex-direction: column;
+        align-content: flex-start;
+    }
+
+    .aboutSection__eduaction__left,
+    .aboutSection__eduaction__right {
+        width: 80% !important;
+        font-size: 1.6rem !important;
+    }
+
+    
   }
 `;
 
@@ -86,6 +134,46 @@ export default function AboutSection() {
           subheading='Gracias a mi experiencia en otras áreas como el diseño y en la universidad, adquirí habilidades que creo que son de gran ayuda y que complementan perfectamente con mi perfil de desarrollador front end.'
           skills={skillsC}
             />
+            <div className="aboutSection__eduaction">
+                <SectionTitle heading="Educación y experiencia" />
+                <Ptext>
+                Gracias a mi experiencia en otras áreas como el diseño y en la universidad, adquirí habilidades que creo que son de gran ayuda y que complementan perfectamente con mi perfil de desarrollador front end.
+                </Ptext>
+                <div>
+                <div className="aboutSection__eduaction__left" >
+                    <p>
+                    Ingeniero en Sistemas de Información<br/>
+                    <span>Universidad Nacional de La Rioja<br/>
+                    2018 - Actualidad</span><br/><br/>
+
+                    <p className="subrayado" >Cursos</p><br/><br/>
+
+                    MERN Stack<br/>
+                    <span>Pilar Tecno<br/>
+                    2021 - Actualidad</span><br/><br/>
+
+                    <span>Diseño UX<br/>
+                    MateriaD<br/>
+                    2021</span><br/><br/>
+
+                    Diseñador Gráfico<br/>
+                    <span>Centro de capacitación ISDEEA<br/>
+                    2017 - 2018</span>
+                    </p>
+                </div>
+                <div className="aboutSection__eduaction__right" >
+                    <p>
+                    Trabajos finales de desarrollo web<br/>
+                    <span>Universidad Nacional de La Rioja<br/>
+                    2020 - 2021</span><br/><br/>
+
+                    Finalista del Programa de innovación financiera digital "Banco Patagonia Emprende"<br/>
+                    <span>Banco Patagonia<br/>
+                    2019</span>
+                    </p>
+                </div>
+                </div>
+            </div>
         </div>
       </div>
     </AboutSectionStyle>
