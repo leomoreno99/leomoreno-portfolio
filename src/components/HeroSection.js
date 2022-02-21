@@ -1,12 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import Ptext from './Ptext';
 import Saludo from '../assets/images/saludo.svg'
 import MouseScroll from '../assets/images/mouse_scroll.png'
 
 const HeroStyles = styled.div`
   .hero {
-    height: 100vh;
+    /* height: 100vh; */
     min-height: 1000px;
     width: 100%;
     text-align: start;
@@ -62,10 +61,10 @@ const HeroStyles = styled.div`
     }
     @keyframes mov {
       from {
-        transform: translateY(-2px);
+        transform: translateY(2px);
       }
       to {
-        transform: translateY(2px);
+        transform: translateY(-2px);
       }
     }
   }
@@ -133,7 +132,7 @@ export default function HeroSection() {
             <p>
             Soy estudiante avanzado de Ingeniería en Sistemas. Me gusta el desarrollo web,
             siempre estoy profundizando conocimientos sobre ello y sobre nuevas tecnologías.
-            <span>Amante del arte en todo su esplendor.</span>
+            <span> Amante del arte en todo su esplendor.</span>
             </p>
           </div>
           <div className="hero__scrollDown">
