@@ -40,7 +40,7 @@ const HeroStyles = styled.div`
     align-items: center;
     gap: 1rem;
     position: fixed;
-    bottom: 100px;
+    bottom: 50px;
     width: 50px;
     left: 50px;
     p {
@@ -68,13 +68,8 @@ const HeroStyles = styled.div`
       }
     }
   }
-
-  @media only screen and (max-width: 1350px) {
-    .hero__name {
-      width: 100%;
-      font-size: 7rem;
-      font-family: 'Inter Bold';
-    }
+  
+  @media only screen and (max-width: 1480px) {
     .hero__scrollDown {
       flex-direction: column;
       left: 0px;
@@ -87,6 +82,15 @@ const HeroStyles = styled.div`
         max-width: 16px;
       }
     }
+  }
+
+  @media only screen and (max-width: 1350px) {
+    .hero__name {
+      width: 100%;
+      font-size: 7rem;
+      font-family: 'Inter Bold';
+    }
+    
   }
 
   @media only screen and (max-width: 768px) {

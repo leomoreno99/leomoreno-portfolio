@@ -20,6 +20,7 @@ const GlobalStyles = createGlobalStyle`
     --white: white;
     --gray: #5D5C5A;
   }
+  
   html{
     font-size: 10px;
     font-family: 'Inter Regular';
