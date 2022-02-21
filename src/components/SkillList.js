@@ -11,6 +11,11 @@ const SkillListStyle = styled.div`
   li {
     font-size: 2.2rem;
   }
+
+  @media only screen and (max-width: 1000px) {
+    width: 65rem;
+  }
+
   @media only screen and (max-width: 768px) {
     width: 85%;
     margin-top: 4rem;
