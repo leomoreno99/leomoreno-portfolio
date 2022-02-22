@@ -30,7 +30,7 @@ const SkillListStyle = styled.div`
 
 export default function SkillList({ skill = ["skill"] }) {
   return (
-    <SkillListStyle >
+    <SkillListStyle>
       <ul>
         {skill.map((skill) => {
           return <li>{skill}</li>;

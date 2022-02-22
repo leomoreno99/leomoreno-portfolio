@@ -147,10 +147,10 @@ export default function AboutSection() {
           <div className="aboutSection__eduaction">
             <SectionTitle heading="Educación y experiencia" />
             <Ptext>
-              Gracias a mi experiencia en otras áreas como el diseño y en la
-              universidad, adquirí habilidades que creo que son de gran ayuda y
-              que complementan perfectamente con mi perfil de desarrollador
-              front end.
+              Estudiante de 5to año de Ingeniería con 37 materias aprobadas (23
+              restantes). Realicé varios cursos para mejorar y ahondar mis
+              conocimientos donde destaco los más importantes y con mayor
+              reconocimiento.
             </Ptext>
             <div>
               <div className="aboutSection__eduaction__left">
