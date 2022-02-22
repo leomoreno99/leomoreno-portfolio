@@ -106,7 +106,7 @@ export default function HeroSection() {
       <div className="hero">
         <div className="container">
           <div className="hero__name">
-            <object data={Saludo} type="image/svg+xml" />
+            <object data={Saludo} type="image/svg+xml" aria-label="svg" />
           </div>
           <div className="hero__info">
             <p>
