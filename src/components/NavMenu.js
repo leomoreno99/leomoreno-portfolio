@@ -1,197 +1,177 @@
-import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
-import { MdClose, MdMenu } from 'react-icons/md';
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
+import { MdClose, MdMenu } from "react-icons/md";
 
 const NavMenuStyles = styled.div`
-    position: fixed;
-    z-index: 100;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 1rem 0;
-    background: ${(props)=>props.navBarColor ? 'transparent' : 'var(--beige)'};
-    transition: .3s;
-    ul {
-      max-width: 1200px;
-      margin: 0 auto;
-      width: 90%;
-      text-align: center;
-      li {
-        display: inline-block;
-        border-radius: 8px;
-        transition: 0.3s ease background-color;
-        
-      }
-      a {
-        display: inline-block;
-        position: relative;
-        font-family: 'Inter Regular';
-        letter-spacing: .5rem;
-        margin: 2.1rem 5rem;
-        font-size: 1.6rem;
-        color: var(--black);
-        outline: none;
-        cursor: pointer;
-      }
-      a::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        transform: scaleX(0);
-        height: 1px;
-        bottom: 0;
-        left: 0;
-        background-color: var(--orange);
-        transform-origin: bottom right;
-        transition: transform 0.25s ease-out;
-      }
-      a:hover::after {
-        transform: scaleX(1);
-        transform-origin: bottom left;
-      }
-      .active {
-        text-decoration: underline;
-        text-decoration-color: var(--orange);
-        text-underline-position: under;
-        transition: transform 1s ease-out;
-       
-      }
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 0;
+  background: ${(props) =>
+    props.navBarColor ? "transparent" : "var(--beige)"};
+  transition: 0.3s;
+  ul {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 90%;
+    text-align: center;
+    li {
+      display: inline-block;
+      border-radius: 8px;
+      transition: 0.3s ease background-color;
     }
+    a {
+      display: inline-block;
+      position: relative;
+      font-family: "Inter Regular";
+      letter-spacing: 0.5rem;
+      margin: 2.1rem 5rem;
+      font-size: 1.6rem;
+      color: var(--black);
+      outline: none;
+      cursor: pointer;
+    }
+    a::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 1px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--orange);
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+    a:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+    .active {
+      text-decoration: underline;
+      text-decoration-color: var(--orange);
+      text-underline-position: under;
+      transition: transform 1s ease-out;
+    }
+  }
+  .mobile-menu-icon {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    width: 4rem;
+    cursor: pointer;
+    display: none;
+  }
+  .closeNavIcon {
+    display: none;
+  }
+  @media only screen and (max-width: 768px) {
+    padding: 0;
+    .hide-item {
+      transform: translateY(calc(-100% - var(--top)));
+    }
+
     .mobile-menu-icon {
+      display: block;
+    }
+    .navItems {
+      --top: 1rem;
+      transition: 0.3s ease transform;
+      background-color: var(--white);
+      padding: 2rem;
+      width: 90%;
+      max-width: 300px;
       position: absolute;
       right: 1rem;
-      top: 1rem;
-      width: 4rem;
-      cursor: pointer;
-      display: none;
-    }
-    .closeNavIcon {
-      display: none;
-    }
-    @media only screen and (max-width: 768px) {
-      padding: 0;
-      .hide-item {
-        transform: translateY(calc(-100% - var(--top)));
-      }
-
-      .mobile-menu-icon {
+      top: var(--top);
+      .closeNavIcon {
         display: block;
+        width: 3rem;
+        margin: 0 0 0 auto;
+        cursor: pointer;
+        * {
+          pointer-events: none;
+        }
       }
-      .navItems {
-        --top: 1rem;
-        transition: 0.3s ease transform;
-        background-color: var(--white);
-        padding: 2rem;
-        width: 90%;
-        max-width: 300px;
-        position: absolute;
-        right: 1rem;
-        top: var(--top);
-        .closeNavIcon {
-          display: block;
-          width: 3rem;
-          margin: 0 0 0 auto;
-          cursor: pointer;
-          * {
-            pointer-events: none;
-          }
-        }
-        li {
-          display: block;
-          margin-bottom: 1rem;
-        }
+      li {
+        display: block;
+        margin-bottom: 1rem;
       }
     }
+  }
 `;
-
-
-
 
 export const NavMenu = () => {
   const [showNav, setShowNav] = useState(false);
   const [active, setActive] = useState(1);
+  const [scroll, setScroll] = useState(1);
   const [navBarColor, setNavBarColor] = useState(false);
 
-
-  useEffect(()=>{
+  useEffect(() => {
     let pant = window.screen.width;
-    console.log(pant)
-    if(active === 1) {
-          window.scroll({
-            top: 0,
-            behavior: 'smooth'
-          });
-        }
-      else if(active === 2) {
-          if(pant >= 1351){
-            window.scroll({
-              top: 760,
-              behavior: 'smooth'
-            });
-          } else if(pant >= 1241 && pant <= 1350) {
-            window.scroll({
-              top: 650,
-              behavior: 'smooth'
-            });
-          } 
-          else if(pant >= 1131 && pant <= 1240) {
-            window.scroll({
-              top: 700,
-              behavior: 'smooth'
-            });
-          } 
-          else if(pant >= 881 && pant <= 1130) {
-            window.scroll({
-              top: 620,
-              behavior: 'smooth'
-            });
-          } 
-          else if(pant >= 769 && pant <= 880) {
-            window.scroll({
-              top: 492,
-              behavior: 'smooth'
-            });
-          } 
-          else if(pant >= 500 && pant <= 768) {
-            window.scroll({
-              top: 380,
-              behavior: 'smooth'
-            });
-          } 
-          else if(pant >= 200 && pant <= 499) {
-            window.scroll({
-              top: 300,
-              behavior: 'smooth'
-            });
-          } 
-        }
-        else if(active === 3) {
-          window.scroll({
-            top: 3799,
-            behavior: 'smooth'
-          });
-        }
-  },[active])
-
-  // const navScroll = () => {
-  //   if(active === 1) {
-  //     window.scroll({
-  //       top: 100,
-  //       left: 100,
-  //       behavior: 'smooth'
-  //     });
-  //   }
-  // }
-
+    console.log(pant);
+    if (scroll === 1) {
+      window.scroll({
+        top: 0,
+        behavior: "smooth",
+      });
+    } else if (scroll === 2) {
+      if (pant >= 1351) {
+        window.scroll({
+          top: 760,
+          behavior: "smooth",
+        });
+      } else if (pant >= 1241 && pant <= 1350) {
+        window.scroll({
+          top: 650,
+          behavior: "smooth",
+        });
+      } else if (pant >= 1131 && pant <= 1240) {
+        window.scroll({
+          top: 700,
+          behavior: "smooth",
+        });
+      } else if (pant >= 881 && pant <= 1130) {
+        window.scroll({
+          top: 620,
+          behavior: "smooth",
+        });
+      } else if (pant >= 769 && pant <= 880) {
+        window.scroll({
+          top: 492,
+          behavior: "smooth",
+        });
+      } else if (pant >= 500 && pant <= 768) {
+        window.scroll({
+          top: 380,
+          behavior: "smooth",
+        });
+      } else if (pant >= 200 && pant <= 499) {
+        window.scroll({
+          top: 300,
+          behavior: "smooth",
+        });
+      }
+    } else if (scroll === 3) {
+      window.scroll({
+        top: 3799,
+        behavior: "smooth",
+      });
+    }
+  }, [scroll]);
 
   window.addEventListener("scroll", () => {
     let value = window.scrollY;
-    console.log(value)
     value >= 3720 ? setNavBarColor(true) : setNavBarColor(false);
+    if (value !== -1) {
+      setScroll(4);
+    }
   });
 
   return (
-    <NavMenuStyles navBarColor={navBarColor} >
+    <NavMenuStyles navBarColor={navBarColor}>
       <div
         className="mobile-menu-icon"
         onClick={() => setShowNav(!showNav)}
@@ -201,7 +181,7 @@ export const NavMenu = () => {
       >
         <MdMenu />
       </div>
-      <ul className={!showNav ? 'navItems hide-item' : 'navItems'}>
+      <ul className={!showNav ? "navItems hide-item" : "navItems"}>
         <div
           className="closeNavIcon"
           onClick={() => setShowNav(!showNav)}
@@ -213,10 +193,11 @@ export const NavMenu = () => {
         </div>
         <li>
           <a
-            className={active===1 ? 'active' : ''}
-            onClick={ () => {
+            className={active === 1 ? "active" : ""}
+            onClick={() => {
               setShowNav(!showNav);
               setActive(1);
+              setScroll(1);
             }}
             onKeyDown={() => setShowNav(!showNav)}
           >
@@ -225,22 +206,24 @@ export const NavMenu = () => {
         </li>
         <li>
           <a
-           className={active===2 ? 'active' : ''}
-           onClick={(e) => {
-             setShowNav(!showNav);
-             setActive(2)
-           }}
-           onKeyDown={() => setShowNav(!showNav)}
+            className={active === 2 ? "active" : ""}
+            onClick={(e) => {
+              setShowNav(!showNav);
+              setActive(2);
+              setScroll(2);
+            }}
+            onKeyDown={() => setShowNav(!showNav)}
           >
             ACERCA DE
           </a>
         </li>
         <li>
           <a
-            className={active===3 ? 'active' : ''}
+            className={active === 3 ? "active" : ""}
             onClick={() => {
               setShowNav(!showNav);
-              setActive(3)
+              setActive(3);
+              setScroll(3);
             }}
             onKeyDown={() => setShowNav(!showNav)}
           >
@@ -251,4 +234,3 @@ export const NavMenu = () => {
     </NavMenuStyles>
   );
 };
-

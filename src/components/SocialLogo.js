@@ -5,10 +5,10 @@ const SocialLogoStyles = styled.div`
   svg {
     width: 3rem;
     height: 3rem;
-    transition: .3s;
+    transition: 0.3s;
   }
 
-  svg:hover{
+  svg:hover {
     fill: var(--orange);
   }
 
@@ -20,11 +20,11 @@ const SocialLogoStyles = styled.div`
   }
 `;
 
-export default function SocialLogo({svg, href='#' }) {
+export default function SocialLogo({ svg, href = "#" }) {
   const { viewBox, path, fillRule, transform } = svg;
   return (
     <SocialLogoStyles>
-      <a href={href} target="_blank" rel='noreferrer' >
+      <a href={href} target="_blank" rel="noreferrer">
         <svg viewBox={viewBox}>
           <g fill-rule={fillRule} transform={transform}>
             {path}

@@ -1,9 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const SectionTitleStyle = styled.div`
   h2 {
-    font-family: 'Inter Semi Bold';
+    font-family: "Inter Semi Bold";
     font-size: 5.2rem;
   }
   @media only screen and (max-width: 768px) {
@@ -13,9 +13,7 @@ const SectionTitleStyle = styled.div`
   }
 `;
 
-export default function SectionTitle({
-  heading = 'Heading',
-}) {
+export default function SectionTitle({ heading = "Heading" }) {
   return (
     <SectionTitleStyle className="section-title">
       <h2>{heading}</h2>
