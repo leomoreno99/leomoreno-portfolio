@@ -14,7 +14,7 @@ const GlobalStyles = createGlobalStyle`
 
   :root{  
     --deep-dark: #1E1E1E;
-    --beige: #E8E5E2;
+    --beige: red;
     --orange: #EB0805;
     --black: black;
     --white: white;
