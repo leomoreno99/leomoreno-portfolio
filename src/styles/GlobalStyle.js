@@ -20,6 +20,19 @@ const GlobalStyles = createGlobalStyle`
     --white: white;
     --gray: #5D5C5A;
   }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--orange);
+  }
+  
+  
+  ::-webkit-scrollbar-track {
+    background-color: var(--beige);
+  }
   
   html{
     font-size: 10px;

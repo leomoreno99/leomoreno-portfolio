@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { MdClose, MdMenu } from 'react-icons/md';
-import { NavLink } from 'react-router-dom';
 
 const NavMenuStyles = styled.div`
     position: fixed;
@@ -10,7 +9,8 @@ const NavMenuStyles = styled.div`
     left: 0;
     width: 100%;
     padding: 1rem 0;
-    background: var(--beige);
+    background: ${(props)=>props.navBarColor ? 'transparent' : 'var(--beige)'};
+    transition: .3s;
     ul {
       max-width: 1200px;
       margin: 0 auto;
@@ -31,6 +31,7 @@ const NavMenuStyles = styled.div`
         font-size: 1.6rem;
         color: var(--black);
         outline: none;
+        cursor: pointer;
       }
       a::after {
         content: '';
@@ -103,11 +104,94 @@ const NavMenuStyles = styled.div`
     }
 `;
 
+
+
+
 export const NavMenu = () => {
   const [showNav, setShowNav] = useState(false);
+  const [active, setActive] = useState(1);
+  const [navBarColor, setNavBarColor] = useState(false);
+
+
+  useEffect(()=>{
+    let pant = window.screen.width;
+    console.log(pant)
+    if(active === 1) {
+          window.scroll({
+            top: 0,
+            behavior: 'smooth'
+          });
+        }
+      else if(active === 2) {
+          if(pant >= 1351){
+            window.scroll({
+              top: 760,
+              behavior: 'smooth'
+            });
+          } else if(pant >= 1241 && pant <= 1350) {
+            window.scroll({
+              top: 650,
+              behavior: 'smooth'
+            });
+          } 
+          else if(pant >= 1131 && pant <= 1240) {
+            window.scroll({
+              top: 700,
+              behavior: 'smooth'
+            });
+          } 
+          else if(pant >= 881 && pant <= 1130) {
+            window.scroll({
+              top: 620,
+              behavior: 'smooth'
+            });
+          } 
+          else if(pant >= 769 && pant <= 880) {
+            window.scroll({
+              top: 492,
+              behavior: 'smooth'
+            });
+          } 
+          else if(pant >= 500 && pant <= 768) {
+            window.scroll({
+              top: 380,
+              behavior: 'smooth'
+            });
+          } 
+          else if(pant >= 200 && pant <= 499) {
+            window.scroll({
+              top: 300,
+              behavior: 'smooth'
+            });
+          } 
+        }
+        else if(active === 3) {
+          window.scroll({
+            top: 3799,
+            behavior: 'smooth'
+          });
+        }
+  },[active])
+
+  // const navScroll = () => {
+  //   if(active === 1) {
+  //     window.scroll({
+  //       top: 100,
+  //       left: 100,
+  //       behavior: 'smooth'
+  //     });
+  //   }
+  // }
+
+
+  window.addEventListener("scroll", () => {
+    let value = window.scrollY;
+    console.log(value)
+    value >= 3720 ? setNavBarColor(true) : setNavBarColor(false);
+  });
 
   return (
-    <NavMenuStyles>
+    <NavMenuStyles navBarColor={navBarColor} >
       <div
         className="mobile-menu-icon"
         onClick={() => setShowNav(!showNav)}
@@ -128,40 +212,43 @@ export const NavMenu = () => {
           <MdClose />
         </div>
         <li>
-          <NavLink
-            to="/"
-            exact
-            onClick={() => setShowNav(!showNav)}
-            role="button"
-            tabIndex={0}
+          <a
+            className={active===1 ? 'active' : ''}
+            onClick={ () => {
+              setShowNav(!showNav);
+              setActive(1);
+            }}
             onKeyDown={() => setShowNav(!showNav)}
           >
             INICIO
-          </NavLink>
+          </a>
         </li>
         <li>
-          <NavLink
-            to="/about"
-            onClick={() => setShowNav(!showNav)}
-            role="button"
-            tabIndex={0}
-            onKeyDown={() => setShowNav(!showNav)}
+          <a
+           className={active===2 ? 'active' : ''}
+           onClick={(e) => {
+             setShowNav(!showNav);
+             setActive(2)
+           }}
+           onKeyDown={() => setShowNav(!showNav)}
           >
             ACERCA DE
-          </NavLink>
+          </a>
         </li>
         <li>
-          <NavLink
-            to="/projects"
-            onClick={() => setShowNav(!showNav)}
-            role="button"
-            tabIndex={0}
+          <a
+            className={active===3 ? 'active' : ''}
+            onClick={() => {
+              setShowNav(!showNav);
+              setActive(3)
+            }}
             onKeyDown={() => setShowNav(!showNav)}
           >
             CONTACTO
-          </NavLink>
+          </a>
         </li>
       </ul>
     </NavMenuStyles>
   );
 };
+
