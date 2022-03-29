@@ -3,12 +3,13 @@ import styled from "styled-components";
 
 const SocialLogoStyles = styled.div`
   svg {
-    width: 3rem;
+    /* width: 3rem;
     height: 3rem;
-    transition: 0.3s;
+    transition: 0.3s; */
+    fill: var(--secondary);
   }
 
-  svg:hover {
+  /* svg:hover {
     fill: var(--tertiary);
   }
 
@@ -17,20 +18,18 @@ const SocialLogoStyles = styled.div`
       width: 2.5rem;
       height: 2.5rem;
     }
-  }
+  } */
 `;
 
-export default function SocialLogo({ svg, href = "#" }) {
+export default function Saludo({ svg }) {
   const { viewBox, path, fillRule, transform } = svg;
   return (
     <SocialLogoStyles>
-      <a href={href} target="_blank" rel="noreferrer">
-        <svg viewBox={viewBox}>
-          <g fill-rule={fillRule} transform={transform}>
-            {path}
-          </g>
-        </svg>
-      </a>
+      <svg viewBox={viewBox}>
+        <g fill-rule={fillRule} transform={transform}>
+          {path}
+        </g>
+      </svg>
     </SocialLogoStyles>
   );
 }

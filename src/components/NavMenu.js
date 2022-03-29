@@ -10,8 +10,8 @@ const NavMenuStyles = styled.div`
   width: 100%;
   padding: 1rem 0;
   background: ${(props) =>
-    props.navBarColor ? "transparent" : "var(--beige)"};
-  transition: 0.3s;
+    props.navBarColor ? "transparent" : "var(--primary)"};
+  /* transition: 0.3s; */
   ul {
     max-width: 1200px;
     margin: 0 auto;
@@ -29,7 +29,7 @@ const NavMenuStyles = styled.div`
       letter-spacing: 0.5rem;
       margin: 2.1rem 5rem;
       font-size: 1.6rem;
-      color: var(--black);
+      color: var(--secondary);
       outline: none;
       cursor: pointer;
     }
@@ -41,7 +41,7 @@ const NavMenuStyles = styled.div`
       height: 1px;
       bottom: 0;
       left: 0;
-      background-color: var(--orange);
+      background-color: var(--tertiary);
       transform-origin: bottom right;
       transition: transform 0.25s ease-out;
     }
@@ -51,7 +51,7 @@ const NavMenuStyles = styled.div`
     }
     .active {
       text-decoration: underline;
-      text-decoration-color: var(--orange);
+      text-decoration-color: var(--tertiary);
       text-underline-position: under;
       transition: transform 1s ease-out;
     }
@@ -171,7 +171,7 @@ export const NavMenu = () => {
   });
 
   return (
-    <NavMenuStyles navBarColor={navBarColor}>
+    <NavMenuStyles className="navBar" navBarColor={navBarColor}>
       <div
         className="mobile-menu-icon"
         onClick={() => setShowNav(!showNav)}
