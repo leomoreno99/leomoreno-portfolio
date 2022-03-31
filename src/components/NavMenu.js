@@ -193,6 +193,7 @@ export const NavMenu = () => {
         </div>
         <li>
           <a
+            href="#home"
             className={active === 1 ? "active" : ""}
             onClick={() => {
               setShowNav(!showNav);
@@ -206,6 +207,7 @@ export const NavMenu = () => {
         </li>
         <li>
           <a
+          href="#about"
             className={active === 2 ? "active" : ""}
             onClick={(e) => {
               setShowNav(!showNav);
@@ -219,6 +221,7 @@ export const NavMenu = () => {
         </li>
         <li>
           <a
+          href="#contact"
             className={active === 3 ? "active" : ""}
             onClick={() => {
               setShowNav(!showNav);
