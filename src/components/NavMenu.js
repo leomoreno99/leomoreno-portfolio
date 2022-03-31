@@ -4,6 +4,7 @@ import { MdClose, MdMenu } from "react-icons/md";
 
 const NavMenuStyles = styled.div`
   position: fixed;
+  user-select: none;
   z-index: 100;
   top: 0;
   left: 0;
@@ -22,7 +23,7 @@ const NavMenuStyles = styled.div`
       border-radius: 8px;
       transition: 0.3s ease background-color;
     }
-    a {
+    div {
       display: inline-block;
       position: relative;
       font-family: "Inter Regular";
@@ -33,7 +34,7 @@ const NavMenuStyles = styled.div`
       outline: none;
       cursor: pointer;
     }
-    a::after {
+    div::after {
       content: "";
       position: absolute;
       width: 100%;
@@ -45,7 +46,7 @@ const NavMenuStyles = styled.div`
       transform-origin: bottom right;
       transition: transform 0.25s ease-out;
     }
-    a:hover::after {
+    div:hover::after {
       transform: scaleX(1);
       transform-origin: bottom left;
     }
@@ -156,7 +157,7 @@ export const NavMenu = () => {
       }
     } else if (scroll === 3) {
       window.scroll({
-        top: 3799,
+        top: 3900,
         behavior: "smooth",
       });
     }
@@ -192,7 +193,7 @@ export const NavMenu = () => {
           <MdClose color={'var(--secondary)'} />
         </div>
         <li>
-          <a
+          <div
             className={active === 1 ? "active" : ""}
             onClick={() => {
               setShowNav(!showNav);
@@ -202,10 +203,10 @@ export const NavMenu = () => {
             onKeyDown={() => setShowNav(!showNav)}
           >
             INICIO
-          </a>
+          </div>
         </li>
         <li>
-          <a
+          <div
             className={active === 2 ? "active" : ""}
             onClick={(e) => {
               setShowNav(!showNav);
@@ -215,10 +216,10 @@ export const NavMenu = () => {
             onKeyDown={() => setShowNav(!showNav)}
           >
             ACERCA DE
-          </a>
+          </div>
         </li>
         <li>
-          <a
+          <div
             className={active === 3 ? "active" : ""}
             onClick={() => {
               setShowNav(!showNav);
@@ -228,7 +229,7 @@ export const NavMenu = () => {
             onKeyDown={() => setShowNav(!showNav)}
           >
             CONTACTO
-          </a>
+          </div>
         </li>
       </ul>
     </NavMenuStyles>
