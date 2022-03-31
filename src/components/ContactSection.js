@@ -37,7 +37,7 @@ const ContactSectionStyles = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: var(--white);
+  background-color: var(--contact-background);
 
   .contactSection {
     display: flex;
@@ -65,12 +65,11 @@ const ContactSectionStyles = styled.div`
 export default function ContactSection() {
   return (
     <ContactSectionStyles>
-      <div className="contactSection">
+      <div id="contact" className="contactSection">
         <SectionTitle heading="Contacto" negative />
         <Ptext negative>
           Si tienes una solicitud o pregunta, no dudes en contactarme a través
-          de mi Linkedin o a través de mis otras redes sociales que se
-          encuentran en este apartado.
+          de mi Linkedin o mis otras redes sociales.
         </Ptext>
         <div className="social">
           <SocialLogo

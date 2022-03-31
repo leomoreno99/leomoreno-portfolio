@@ -6,6 +6,7 @@ const SocialLogoStyles = styled.div`
     width: 3rem;
     height: 3rem;
     transition: 0.3s;
+    fill: var(--contact-color);
   }
 
   svg:hover {

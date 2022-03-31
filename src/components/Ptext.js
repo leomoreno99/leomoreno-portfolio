@@ -4,7 +4,7 @@ import styled from "styled-components";
 const PStyle = styled.div`
   max-width: 890px;
   font-size: 2.2rem;
-  color: ${(props)=> props.negative?'black':'var(--secondary)'};
+  color: ${(props)=> props.negative?'var(--contact-color)':'var(--secondary)'};
   @media only screen and (max-width: 768px) {
     font-size: 1.6rem;
     line-height: 1.3;

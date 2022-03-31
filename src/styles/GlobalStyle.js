@@ -15,21 +15,26 @@ const GlobalStyles = createGlobalStyle`
   :root{  
     //falta lo del mouse scroll y el navbar al llegar a contactos
     
-      --white: white;
-      --black: black;
-      .theme1 {
-        transition-duration:  1s;
-      --primary: #E8E5E2;
-      --secondary: #1E1E1E;
-      --tertiary: #EB0805;
-      --quaternary: #5D5C5A;
-    }
-    .theme2 {
+      /* --white: white;
+      --black: black; */
+      
+    .theme1 {
       transition-duration:  1s;
       --primary: #00A19A;
       --secondary: #EBEDED; 
       --tertiary: #EB0805;
       --quaternary: #C7EDED; //de 1 a 16 en HSB
+      --contact-background: #282B29;
+      --contact-color: #EBEDED;
+    }
+      .theme2 {
+        transition-duration:  1s;
+      --primary: #E8E5E2;
+      --secondary: #1E1E1E;
+      --tertiary: #EB0805;
+      --quaternary: #5D5C5A;
+      --contact-background: white;
+      --contact-color: black;
     }
     .theme3 {
       transition-duration:  1s;
@@ -37,6 +42,8 @@ const GlobalStyles = createGlobalStyle`
       --secondary: #E83C38;
       --tertiary: #282B29;
       --quaternary: #DB6967;
+      --contact-background: white;
+      --contact-color: black;
     }
     .theme4 {
       transition-duration:  1s;
@@ -44,6 +51,8 @@ const GlobalStyles = createGlobalStyle`
       --secondary: #282B29;
       --tertiary: #00A19A;
       --quaternary: #5D5C5A;
+      --contact-background: white;
+      --contact-color: black;
     }
     .theme5 {
       transition-duration:  1s;
@@ -51,6 +60,8 @@ const GlobalStyles = createGlobalStyle`
       --secondary: #A6D1C9;
       --tertiary: #EB0805;
       --quaternary: #7D9E98;
+      --contact-background: white;
+      --contact-color: black;
     }
   }
 

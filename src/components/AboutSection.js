@@ -191,7 +191,7 @@ export default function AboutSection() {
           <div className="aboutSection__eduaction">
             <SectionTitle heading="Educación y experiencia" />
             <Ptext>
-              Estudiante de 5to año de Ingeniería con 37 materias aprobadas (23
+              Estudiante de 5to año de Ingeniería con 39 materias aprobadas (21
               restantes). Realicé varios cursos para mejorar y ahondar mis
               conocimientos donde destaco los más importantes y con mayor
               reconocimiento.

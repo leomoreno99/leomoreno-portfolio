@@ -79,7 +79,7 @@ const NavMenuStyles = styled.div`
     .navItems {
       --top: 1rem;
       transition: 0.3s ease transform;
-      background-color: var(--white);
+      background-color: var(--contact-background);
       padding: 2rem;
       width: 90%;
       max-width: 300px;
@@ -111,7 +111,7 @@ export const NavMenu = () => {
 
   useEffect(() => {
     let pant = window.screen.width;
-    console.log(pant);
+    // console.log(pant);
     if (scroll === 1) {
       window.scroll({
         top: 0,
@@ -179,7 +179,7 @@ export const NavMenu = () => {
         tabIndex={0}
         onKeyDown={() => setShowNav(!showNav)}
       >
-        <MdMenu />
+        <MdMenu color={'var(--secondary)'} />
       </div>
       <ul className={!showNav ? "navItems hide-item" : "navItems"}>
         <div
@@ -189,7 +189,7 @@ export const NavMenu = () => {
           tabIndex={0}
           onKeyDown={() => setShowNav(!showNav)}
         >
-          <MdClose />
+          <MdClose color={'var(--secondary)'} />
         </div>
         <li>
           <a

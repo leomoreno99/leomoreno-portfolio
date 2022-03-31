@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const SectionTitleStyle = styled.div`
-  color: ${(props)=> props.negative?'black':'var(--secondary)'};
+  color: ${(props)=> props.negative?'var(--contact-color)':'var(--secondary)'};
   h2 {
     font-family: "Inter Semi Bold";
     font-size: 5.2rem;
