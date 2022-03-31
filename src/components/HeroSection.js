@@ -179,7 +179,7 @@ const HeroStyles = styled.div`
       }
     }
     .button-wrapper,
-    a {
+    .button {
       width: 100%;
       text-align: center;
     }
