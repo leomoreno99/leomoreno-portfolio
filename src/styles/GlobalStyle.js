@@ -8,17 +8,61 @@ const GlobalStyles = createGlobalStyle`
   }
 
 *::selection {
-  background: var(--orange);
-  color: var(--beige)
+  background: var(--tertiary);
+  color: var(--primary)
 }
 
   :root{  
-    --deep-dark: #1E1E1E;
-    --beige: #E8E5E2;
-    --orange: #EB0805;
-    --black: black;
-    --white: white;
-    --gray: #5D5C5A;
+    //falta lo del mouse scroll y el navbar al llegar a contactos
+    
+      /* --white: white;
+      --black: black; */
+      
+    .theme1 {
+      transition-duration:  1s;
+      --primary: #00A19A;
+      --secondary: #EBEDED; 
+      --tertiary: #EB0805;
+      --quaternary: #C7EDED; //de 1 a 16 en HSB
+      --contact-background: #282B29;
+      --contact-color: #EBEDED;
+    }
+      .theme2 {
+        transition-duration:  1s;
+      --primary: #E8E5E2;
+      --secondary: #1E1E1E;
+      --tertiary: #EB0805;
+      --quaternary: #5D5C5A;
+      --contact-background: white;
+      --contact-color: black;
+    }
+    .theme3 {
+      transition-duration:  1s;
+      --primary: #A6D1C9;
+      --secondary: #E83C38;
+      --tertiary: #282B29;
+      --quaternary: #DB6967;
+      --contact-background: white;
+      --contact-color: black;
+    }
+    .theme4 {
+      transition-duration:  1s;
+      --primary: #F4C4C4;
+      --secondary: #282B29;
+      --tertiary: #00A19A;
+      --quaternary: #5D5C5A;
+      --contact-background: white;
+      --contact-color: black;
+    }
+    .theme5 {
+      transition-duration:  1s;
+      --primary: #282B29;
+      --secondary: #A6D1C9;
+      --tertiary: #EB0805;
+      --quaternary: #7D9E98;
+      --contact-background: white;
+      --contact-color: black;
+    }
   }
 
   ::-webkit-scrollbar {
@@ -26,19 +70,27 @@ const GlobalStyles = createGlobalStyle`
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: var(--orange);
+    background-color: var(--tertiary);
   }
   
   
   ::-webkit-scrollbar-track {
-    background-color: var(--beige);
+    background-color: var(--primary);
   }
   
   html{
     font-size: 10px;
     font-family: 'Inter Regular';
-    background-color: var(--beige);
   }
+  
+  body {
+    background-color: var(--primary);
+  }
+
+  .navBar {
+    transition-duration:  1s;
+  }
+
   a{
     text-decoration: none;
   }
