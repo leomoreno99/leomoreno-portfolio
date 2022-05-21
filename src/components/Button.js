@@ -3,7 +3,6 @@ import React from "react";
 import styled from "styled-components";
 
 const ButtonStyle = styled.div`
-  margin-top: 2rem;
   margin-right: 2rem;
   display: inline-block;
   cursor: pointer;
@@ -13,7 +12,7 @@ const ButtonStyle = styled.div`
     background-color: ${(props) =>
       props.outline ? "transparent" : "var(--secondary)"};
     padding: 1.5rem 2em;
-    border-radius: 3px;
+    /* border-radius: 3px; */
     display: inline-block;
     border: 2px solid var(--secondary);
     color: ${(props) =>

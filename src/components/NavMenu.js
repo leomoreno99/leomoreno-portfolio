@@ -57,6 +57,7 @@ const NavMenuStyles = styled.div`
       transition: transform 1s ease-out;
     }
   }
+
   .mobile-menu-icon {
     position: absolute;
     right: 1rem;

@@ -17,7 +17,12 @@ const GlobalStyles = createGlobalStyle`
     
       /* --white: white;
       --black: black; */
+
+      //Transitions
+      --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
       
+
+      //Themes
     .theme1 {
       transition-duration:  1s;
       --primary: #00A19A;
@@ -97,7 +102,7 @@ const GlobalStyles = createGlobalStyle`
   img, svg{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    /* object-fit: cover; */
   }
   button{
     outline: none

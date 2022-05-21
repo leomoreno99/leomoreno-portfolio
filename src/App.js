@@ -1,4 +1,5 @@
-import { NavMenu } from "./components/NavMenu";
+// import { NavMenu } from "./components/NavMenu";
+import { NavMenuNew } from "./components/NavMenuNew";
 import { Home } from "./pages/Home";
 
 function App() {
@@ -18,7 +19,8 @@ function App() {
   return (
     < >
       <div onClick={()=>cambiarColor()} >
-        <NavMenu />
+        {/* <NavMenu /> */}
+        <NavMenuNew />
         <Home />
       </div>
     </>

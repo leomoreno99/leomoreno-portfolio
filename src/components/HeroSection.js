@@ -43,25 +43,20 @@ const mov2 = keyframes`
 
 const HeroStyles = styled.div`
   .hero {
-    min-height: 1000px;
+    min-height: 100vh;
     width: 100%;
-    text-align: start;
+    /* text-align: start; */
     display: flex;
     justify-content: center;
+    align-items: center;
     position: relative;
+    .container {
+      height: min-content;
+    }
   }
   .hero__name {
-    margin-top: 28.2rem;
-    width: 135rem;
-  }
-  .hero__info {
-    margin-top: 11rem;
-    font-size: 5.2rem;
-    font-family: "Inter Medium";
-    color: var(--secondary);
-    span {
-      font-family: "Inter Extra Light";
-    }
+    /* margin-top: 28.2rem; */
+    width: 100%;
   }
   .hero__scrollDown,
   .hero__clickMouse {
@@ -77,14 +72,6 @@ const HeroStyles = styled.div`
       letter-spacing: 0.2rem;
       color: var(--secondary);
     }
-
-    /* img {
-      max-height: 16px;
-      animation-duration: 0.5s;
-      animation-name: mov;
-      animation-iteration-count: infinite;
-      animation-direction: alternate;
-    } */
   }
 
   .hero__scrollDown {
@@ -93,14 +80,6 @@ const HeroStyles = styled.div`
     div {
       animation: ${mov} .5s alternate-reverse infinite;
     }
-    /* @keyframes mov {
-      from {
-        transform: translateY(2px);
-      }
-      to {
-        transform: translateY(-2px);
-      }
-    } */
   }
 
   .hero__clickMouse {
@@ -133,29 +112,15 @@ const HeroStyles = styled.div`
     }
   }
 
-  @media only screen and (max-width: 1350px) {
-    .hero__name {
-      width: 100%;
-      font-size: 7rem;
-      font-family: "Inter Bold";
-    }
-  }
-
   @media only screen and (max-width: 768px) {
-    .hero {
+    /* .hero {
       min-height: 750px;
-    }
+    } */
     .hero__name {
       margin-top: 15rem;
       font-size: 1.4rem;
       margin-bottom: -3rem;
       font-size: 3.7rem;
-    }
-
-    .hero__info {
-      margin-top: 10rem;
-      font-size: 2.5rem;
-      width: 100%;
     }
     .hero__scrollDown {
       display: none;
@@ -207,27 +172,16 @@ export default function HeroSection() {
         <div className="container">
           <div className="hero__name">
             <Saludo />
-            {/* <object data={Saludo} type="image/svg+xml" /> */}
-          </div>
-          <div className="hero__info">
-            <p>
-              Soy estudiante avanzado de Ingeniería en Sistemas. Me gusta el
-              desarrollo web, siempre estoy profundizando conocimientos sobre
-              ello y sobre nuevas tecnologías.
-              <span> Amante del arte en todo su esplendor.</span>
-            </p>
             <Button btnText="Contactame" onClick={scroll} />
             <Button btnText="Descarga mi CV" onClick={abrirCV} outline />
           </div>
           <div className="hero__clickMouse">
             <p>CLICKEÁ EN LA PANTALLA PARA CAMBIAR EL COLOR</p>
             <MouseIcon icon={MouseClick} />
-            {/* <img src={MouseScroll} alt="mouse scroll" /> */}
           </div>
           <div className="hero__scrollDown">
             <p>SCROLL</p>
             <MouseIcon icon={MouseScroll} />
-            {/* <img src={MouseScroll} alt="mouse scroll" /> */}
           </div>
         </div>
       </div>
