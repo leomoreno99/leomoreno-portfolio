@@ -34,11 +34,11 @@ margin-bottom: 7.7rem;
             display: block;
             position: relative;
             width: 100%;
-            background-color: var(--secondary);
+            background-color: var(--tertiary);
             .img {
                 position: relative;
+                filter: grayscale(100%) contrast(1) brightness(90%);
                 mix-blend-mode: multiply;
-                filter: grayscale(100%) contrast(1);
                 transition: var(--transition);
             }
             &:before,
@@ -54,12 +54,12 @@ margin-bottom: 7.7rem;
                 top: 0;
                 left: 0;
                 background-color: var(--secondary);
-                mix-blend-mode: var(--secondary);
+                mix-blend-mode: screen;
             }
             &:after {
                 border: 2px solid var(--secondary);
-                top: 15px;
-                left: 15px;
+                top: -2px;
+                left: -2px;
                 z-index: -1;
             }
             &:hover,
@@ -67,8 +67,8 @@ margin-bottom: 7.7rem;
                 background: transparent;
                 outline: 0;
                 &:after {
-                    top: 10px;
-                    left: 10px;
+                    top: 5px;
+                    left: 5px;
                 }
                 .img {
                     filter: none;
@@ -79,7 +79,7 @@ margin-bottom: 7.7rem;
     }
 }
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
     .container {
         padding: 0;
     }

@@ -1,0 +1,14 @@
+{
+    "eCommerce": {
+        "title": "Mini e-commerce",
+        "description": "Consumo una API de productos, la cual utilizo para mostrar los productos por pantalla,  ver el detalle del mismo, agregarlos a un carrito y la lista detallada de los productos del carrito.",
+        "tecnologies": ["React.js", "Material UI", "Redux", "Dexie", "Netlify"],
+        "links": ["puta", "madre"]
+    },
+    "tiendaCucco": {
+        "title": "Tienda Cucco Repuestos",
+        "description": "Una tienda online creada como trabajo final para una materia de la universidad, donde tuvimos que crear el Frontend, Backend y base de datos lo cual hicimos utilizando la arquitectura REST.",
+        "tecnologies": ["Figma", "React.js", "Material UI", "Netlify"],
+        "links": ["putita"]
+    }
+}

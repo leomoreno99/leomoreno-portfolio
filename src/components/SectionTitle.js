@@ -12,7 +12,12 @@ const SectionTitleStyle = styled.div`
   }
   @media only screen and (max-width: 768px) {
     h2 {
-      font-size: 3.4rem;
+      font-size: 8rem;
+    }
+  }
+  @media only screen and (max-width: 480px) {
+    h2 {
+      font-size: 6rem;
     }
   }
 `;

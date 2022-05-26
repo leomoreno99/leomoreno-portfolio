@@ -23,7 +23,7 @@ const GlobalStyles = createGlobalStyle`
       
 
       //Themes
-    .theme1 {
+    /* .theme1 {
       transition-duration:  1s;
       --primary: #00A19A;
       --secondary: #EBEDED; 
@@ -67,6 +67,46 @@ const GlobalStyles = createGlobalStyle`
       --quaternary: #7D9E98;
       --contact-background: white;
       --contact-color: black;
+    } */
+
+    .theme1 {
+      transition-duration:  1s;
+      --primary: #003D41;
+      --secondary: #14C4AF; 
+      --tertiary: #88B0A9;
+      --quaternary: #004D52;
+    }
+
+    .theme2 {
+      transition-duration:  1s;
+      --primary: #400041;
+      --secondary: #C4145D; 
+      --tertiary: #B0889E;
+      --quaternary: #3D0052;
+    }
+
+    .theme3 {
+      transition-duration:  1s;
+      --primary: #000E41;
+      --secondary: #1B58F6; 
+      --tertiary: #8893B0;
+      --quaternary: #001752;
+    }
+
+    .theme4 {
+      transition-duration:  1s;
+      --primary: #411F00;
+      --secondary: #C46814; 
+      --tertiary: #B09688;
+      --quaternary: #522200;
+    }
+
+    .theme5 {
+      transition-duration:  1s;
+      --primary: #014100;
+      --secondary: #14C430; 
+      --tertiary: #88B093;
+      --quaternary: #005212;
     }
   }
 

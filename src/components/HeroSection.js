@@ -117,9 +117,9 @@ const HeroStyles = styled.div`
       min-height: 750px;
     } */
     .hero__name {
-      margin-top: 15rem;
+      /* margin-top: 15rem; */
       font-size: 1.4rem;
-      margin-bottom: -3rem;
+      /* margin-bottom: -3rem; */
       font-size: 3.7rem;
     }
     .hero__scrollDown {
@@ -143,11 +143,13 @@ const HeroStyles = styled.div`
         order: 1;
       }
     }
-    .button-wrapper,
-    .button {
-      width: 100%;
-      text-align: center;
-    }
+  }
+  @media only screen and (max-width: 480px) {
+    .button-wrapper {
+        width: 100%;
+        text-align: center;
+        margin-top: 1rem;
+      }
   }
 `;
 

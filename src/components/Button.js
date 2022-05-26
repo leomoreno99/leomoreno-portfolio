@@ -26,12 +26,17 @@ const ButtonStyle = styled.div`
   }
 
   @media only screen and (max-width: 768px) {
-    :last-child {
-      margin-bottom: 3em;
-    }
     .button {
       font-size: 1.6rem;
+      padding: 1.2rem 1.8em;
+      text-align: center;
+    }
+  }
+  @media only screen and (max-width: 480px) {
+    margin-right: 0;
+    .button {
       padding: 1.2rem;
+      width: 100%;
     }
   }
 `;
@@ -44,12 +49,9 @@ export default function Button({
 }) {
   return (
     <ButtonStyle outline={outline} className="button-wrapper">
-      {/* <Link className="button" to={btnLink}> */}
-
       <div className="button" onClick={onClick} target={target}>
         {btnText}
       </div>
-      {/* </Link> */}
     </ButtonStyle>
   );
 }
