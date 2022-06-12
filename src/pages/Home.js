@@ -1,7 +1,7 @@
 import React from "react";
 import { AboutMeSection } from "../components/AboutMeSection";
 // import AboutSection from "../components/AboutSection";
-// import ContactSection from "../components/ContactSection";
+import ContactSection from "../components/ContactSection";
 import HeroSection from "../components/HeroSection";
 import { ProjectsSection } from "../components/ProjectsSection";
 import { SkillsSection } from "../components/SkillsSection";
@@ -14,7 +14,7 @@ export const Home = () => {
       <AboutMeSection />
       <SkillsSection />
       <ProjectsSection />
-      {/* <ContactSection /> */}
+      <ContactSection />
     </div>
   );
 };

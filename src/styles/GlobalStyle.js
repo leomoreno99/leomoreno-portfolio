@@ -115,7 +115,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: var(--tertiary);
+    background-color: var(--secondary);
   }
   
   
@@ -126,6 +126,7 @@ const GlobalStyles = createGlobalStyle`
   html{
     font-size: 10px;
     font-family: 'Inter Regular';
+    scroll-behavior: smooth;
   }
   
   body {

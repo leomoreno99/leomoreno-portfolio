@@ -94,7 +94,7 @@ margin-bottom: 7.7rem;
 
 export const AboutMeSection = () => {
   return (
-    <AboutSectionStyle>
+    <AboutSectionStyle id='about' >
         <div className="container">
             <SectionTitle heading='Sobre mi' ></SectionTitle>
             <div className='information__container' >

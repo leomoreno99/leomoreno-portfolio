@@ -151,7 +151,7 @@ const skillsC = [
 export default function AboutSection() {
   return (
     <AboutSectionStyle>
-      <div className="container">
+      <div id="about" className="container">
         <div className="aboutSection">
           <SectionTitle heading="Software Skills" />
           <Ptext>

@@ -4,7 +4,7 @@ import styled from "styled-components";
 const PStyle = styled.div`
   max-width: 890px;
   font-size: 2.2rem;
-  color: ${(props)=> props.negative?'var(--contact-color)':'var(--tertiary)'};
+  color: var(--tertiary);
   @media only screen and (max-width: 860px) {
     font-size: 1.8rem;
     line-height: 1.3;
@@ -14,9 +14,9 @@ const PStyle = styled.div`
   }
 `;
 
-export default function Ptext({ children, negative }) {
+export default function Ptext({ children }) {
   return (
-    <PStyle className="para" negative={negative} >
+    <PStyle className="para" >
       <p>{children}</p>
     </PStyle>
   );

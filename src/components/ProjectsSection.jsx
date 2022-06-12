@@ -10,7 +10,7 @@ import Button from "./Button";
 const { eCommerce, tiendaCucco } = projects
 
 const ProjectsSectionStyle = styled.div`
-    margin-bottom: 7.7rem;
+    margin-bottom: 18rem;
     .button__container {
       display: flex;
       justify-content: center;
@@ -28,7 +28,7 @@ const ProjectsSectionStyle = styled.div`
 
 export const ProjectsSection = () => {
   return (
-    <ProjectsSectionStyle>
+    <ProjectsSectionStyle id='projects'>
         <div className='container'>
             <SectionTitle heading='Proyectos' />
             <Project title={eCommerce.title} tecnologies={eCommerce.tecnologies} links={eCommerce.links} img={imgEc} external $mode='reverse' >

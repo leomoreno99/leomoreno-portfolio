@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const ProjectIconStyles = styled.div`
+height: ${(props)=>props.dimensions}rem;
   svg {
     width: ${(props)=>props.dimensions}rem;
     height: ${(props)=>props.dimensions}rem;
@@ -16,8 +17,8 @@ const ProjectIconStyles = styled.div`
 
   @media only screen and (max-width: 768px) {
     svg {
-      width: 2.5rem;
-      height: 2.5rem;
+      width: ${(props)=>props.dimensions-0.3}rem;
+    height: ${(props)=>props.dimensions-0.3}rem;
     }
   }
 `;

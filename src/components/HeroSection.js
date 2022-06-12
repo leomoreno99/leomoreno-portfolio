@@ -86,7 +86,7 @@ const HeroStyles = styled.div`
     width: 350px;
     right: -125px;
     flex-direction: column;
-    top: 320px;
+    top: 350px;
     p {
       transform: translateY(-70px) rotate(90deg);
       margin-bottom: 93px;
@@ -170,7 +170,7 @@ export default function HeroSection() {
 
   return (
     <HeroStyles>
-      <div className="hero">
+      <div id="home" className="hero">
         <div className="container">
           <div className="hero__name">
             <Saludo />

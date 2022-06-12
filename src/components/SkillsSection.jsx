@@ -26,6 +26,7 @@ const SkillsStyle = styled.div`
         margin-top: 4.7rem;
         @media only screen and (max-width: 480px) {
         margin-top: 3rem;
+        gap: 0 3.5rem !important; 
       }
     }
 
@@ -63,7 +64,7 @@ const skills3 = ['REST', 'PostgreSQL', 'MySQL', 'MongoDB']
 
 export const SkillsSection = () => {
   return (
-    <SkillsStyle arrow={arrow} >
+    <SkillsStyle id="skills" arrow={arrow} >
       <div className="container">
         <SectionTitle heading="Skills" />
         <div className="text">
