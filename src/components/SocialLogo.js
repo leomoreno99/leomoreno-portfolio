@@ -23,11 +23,11 @@ const SocialLogoStyles = styled.div`
   }
 `;
 
-export default function SocialLogo({ svg, href = "#", filled=false, dimensions=3 }) {
+export default function SocialLogo({revealIcon, svg, href = "#", filled=false, dimensions=3, target="_blank" }) {
   const { viewBox, path, fillRule, transform } = svg;
   return (
-    <SocialLogoStyles filled={filled} dimensions={dimensions}>
-      <a href={href} target="_blank" rel="noreferrer">
+    <SocialLogoStyles filled={filled} dimensions={dimensions} ref={revealIcon} >
+      <a href={href} target={target} rel="noreferrer">
         <svg viewBox={viewBox}>
           <g fill-rule={fillRule} transform={transform}>
             {path}

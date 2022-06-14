@@ -1,14 +1,17 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
-import Ptext from './Ptext'
-import SectionTitle from './SectionTitle'
-import Perfil from '../assets/images/Perfil.jpg'
+import Ptext from '../Ptext'
+import SectionTitle from '../SectionTitle'
+import Perfil from '../../assets/images/Perfil.jpg'
+import sr from '../../utils/sr'
+import usePrefersReducedMotion from '../../hooks/usePrefersReducedMotion'
+import { srConfig } from '../../config'
 
 const AboutSectionStyle = styled.div`
 margin-bottom: 7.7rem;
 
 .container {
-    padding: 0 8.2rem 20rem 4.5rem;
+    padding: 0 8.2rem 10rem 4.5rem; //con el boton eran 20 en vez de 10
 }
 
 .information__container {
@@ -34,7 +37,7 @@ margin-bottom: 7.7rem;
             display: block;
             position: relative;
             width: 100%;
-            background-color: var(--tertiary);
+            background-color: ${(props)=>props.clsName === 'theme5'? 'var(--primary)':'var(--tertiary)' };
             .img {
                 position: relative;
                 filter: grayscale(100%) contrast(1) brightness(90%);
@@ -92,9 +95,21 @@ margin-bottom: 7.7rem;
 
 `
 
-export const AboutMeSection = () => {
+export const AboutMeSection = ({tema}) => {
+    const revealContainer = useRef(null);
+    // const [prueba, setPrueba] = useState(document.getElementsByTagName('body'));
+    const prefersReducedMotion = usePrefersReducedMotion();
+
+    useEffect(() => {
+        if (prefersReducedMotion) {
+          return;
+        }
+        sr.reveal(revealContainer.current, srConfig());
+      }, []);
+      
+
   return (
-    <AboutSectionStyle id='about' >
+    <AboutSectionStyle id='about' ref={revealContainer} clsName={tema} >
         <div className="container">
             <SectionTitle heading='Sobre mi' ></SectionTitle>
             <div className='information__container' >

@@ -1,9 +1,11 @@
+import { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { keyframes } from "styled-components";
-import Button from "./Button";
+import { srConfig } from "../../config";
+import usePrefersReducedMotion from "../../hooks/usePrefersReducedMotion";
+import sr from "../../utils/sr";
+import Button from "../Button";
 import MouseIcon from "./MouseIcon";
-// import Saludo from "../assets/images/saludo.svg";
-// import MouseScroll from "../assets/images/mouse_scroll.png";
 import Saludo from "./Saludo";
 
 const MouseScroll = {
@@ -113,13 +115,8 @@ const HeroStyles = styled.div`
   }
 
   @media only screen and (max-width: 768px) {
-    /* .hero {
-      min-height: 750px;
-    } */
     .hero__name {
-      /* margin-top: 15rem; */
       font-size: 1.4rem;
-      /* margin-bottom: -3rem; */
       font-size: 3.7rem;
     }
     .hero__scrollDown {
@@ -154,6 +151,24 @@ const HeroStyles = styled.div`
 `;
 
 export default function HeroSection() {
+  const titleReveal = useRef(null);
+  const button1Reveal = useRef(null);
+  const button2Reveal = useRef(null);
+  const info1Reveal = useRef(null);
+  const info2Reveal = useRef(null);
+  const prefersReducedMotion = usePrefersReducedMotion();
+
+    useEffect(() => {
+        if (prefersReducedMotion) {
+          return;
+        }
+        sr.reveal(info1Reveal.current, srConfig(2200));
+        sr.reveal(titleReveal.current, srConfig(2400));
+        sr.reveal(button1Reveal.current, srConfig(2600));
+        sr.reveal(button2Reveal.current, srConfig(2800));
+        sr.reveal(info2Reveal.current, srConfig(3000));
+      }, []);
+  
   const scroll = () => {
     console.log("scroll");
     window.scroll({
@@ -169,19 +184,19 @@ export default function HeroSection() {
   };
 
   return (
-    <HeroStyles>
+    <HeroStyles >
       <div id="home" className="hero">
         <div className="container">
           <div className="hero__name">
-            <Saludo />
-            <Button btnText="Contactame" onClick={scroll} />
-            <Button btnText="Descarga mi CV" onClick={abrirCV} outline />
+            <Saludo titleReveal={titleReveal}/>
+            <Button revealButton={button1Reveal} btnText="Contactame" onClick={scroll} />
+            <Button revealButton={button2Reveal} btnText="Descarga mi CV" onClick={abrirCV} outline />
           </div>
-          <div className="hero__clickMouse">
+          <div className="hero__clickMouse" ref={info1Reveal} >
             <p>CLICKEÁ EN LA PANTALLA PARA CAMBIAR EL COLOR</p>
             <MouseIcon icon={MouseClick} />
           </div>
-          <div className="hero__scrollDown">
+          <div className="hero__scrollDown" ref={info2Reveal} >
             <p>SCROLL</p>
             <MouseIcon icon={MouseScroll} />
           </div>

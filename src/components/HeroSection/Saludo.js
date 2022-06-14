@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import styled from "styled-components";
-import { SaludoSvg } from "../assets/images/svgs";
-import { SaludoMobile } from "../assets/images/svgs"
+import { SaludoSvg } from "../../assets/images/svgs";
+import { SaludoMobile } from "../../assets/images/svgs"
 
 const SaludoStyles = styled.div`
   margin-bottom: 1rem;
@@ -13,7 +13,7 @@ const SaludoStyles = styled.div`
   }
 `;
 
-export default function Saludo() {
+export default function Saludo({titleReveal}) {
 
   const [saludo, setSaludo] = useState(SaludoSvg)
 
@@ -28,7 +28,7 @@ export default function Saludo() {
   })
 
   return (
-    <SaludoStyles>
+    <SaludoStyles ref={titleReveal} >
       <svg viewBox={saludo.viewBox}>
         <g>
           {saludo.path}

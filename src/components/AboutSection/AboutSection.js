@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import Ptext from "./Ptext";
-import SectionTitle from "./SectionTitle";
-import Skill from "./Skill";
+import Ptext from "../Ptext";
+import SectionTitle from "../SectionTitle";
+import Skill from "../SkillsSection/Skill";
 
 // import JsLogo from "../assets/images/javascript-logo-bn.svg";
 // import CssLogo from "../assets/images/css-logo-bn.svg";
@@ -11,7 +11,7 @@ import Skill from "./Skill";
 // import HtmlLogo from "../assets/images/html-logo-bn.svg";
 // import NodeLogo from "../assets/images/node-logo-bn.svg";
 // import ReactLogo from "../assets/images/react-logo-bn.svg";
-import OtherSkill from "./OtherSkill";
+import OtherSkill from "../SkillsSection/OtherSkill";
 
 
 //---------------------------------------

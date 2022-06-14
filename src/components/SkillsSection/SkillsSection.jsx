@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
-import { arrow } from "../assets/images/svgs";
-import Ptext from "./Ptext";
-import SectionTitle from "./SectionTitle";
+import { arrow } from "../../assets/images/svgs";
+import { srConfig } from "../../config";
+import usePrefersReducedMotion from "../../hooks/usePrefersReducedMotion";
+import sr from "../../utils/sr";
+import Ptext from "../Ptext";
+import SectionTitle from "../SectionTitle";
 
 const SkillsStyle = styled.div`
     margin-bottom: 7.7rem;
@@ -63,8 +66,18 @@ const skills2 = ['Material UI', 'Styled Components', 'Adobe Photoshop', 'Adobe I
 const skills3 = ['REST', 'PostgreSQL', 'MySQL', 'MongoDB']
 
 export const SkillsSection = () => {
+  const revealContainer = useRef(null);
+    const prefersReducedMotion = usePrefersReducedMotion();
+
+    useEffect(() => {
+        if (prefersReducedMotion) {
+          return;
+        }
+        sr.reveal(revealContainer.current, srConfig());
+      }, []);
+
   return (
-    <SkillsStyle id="skills" arrow={arrow} >
+    <SkillsStyle id="skills" arrow={arrow} ref={revealContainer} >
       <div className="container">
         <SectionTitle heading="Skills" />
         <div className="text">

@@ -22,9 +22,9 @@ const SectionTitleStyle = styled.div`
   }
 `;
 
-export default function SectionTitle({ heading = "Heading", negative }) {
+export default function SectionTitle({ heading = "Heading", revealTitle, negative }) {
   return (
-    <SectionTitleStyle className="section-title" negative={negative} >
+    <SectionTitleStyle className="section-title" negative={negative} ref={revealTitle} >
       <h2>{heading}</h2>
     </SectionTitleStyle>
   );

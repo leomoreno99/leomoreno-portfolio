@@ -1,9 +1,12 @@
 import styled from "styled-components";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {LeoMorenoLogo} from "../assets/images/svgs"
 import { MdClose, MdMenu } from "react-icons/md";
 // import ProjectIcon from "./ProjectIcon";
 import SocialLogo from "./SocialLogo";
+import usePrefersReducedMotion from "../hooks/usePrefersReducedMotion";
+import { srConfig } from "../config";
+import sr from "../utils/sr";
 
 const NavMenuStyles = styled.div`
     position: fixed;
@@ -151,6 +154,9 @@ export const NavMenuNew = () => {
     const [scroll2, setScroll2] = useState(0);
     const [click, setClick] = useState(0);
     const [navBarPosition, setNavBarPosition] = useState(true);
+    const revealIcon1 = useRef(null);
+    const revealIcon2 = useRef(null);
+    const prefersReducedMotion = usePrefersReducedMotion();
     
     useEffect(()=>{
         if (scroll> scroll2){
@@ -165,6 +171,16 @@ export const NavMenuNew = () => {
         click ? setNavBarPosition(true) : setNavBarPosition(false)
     },[click])
 
+    
+
+    useEffect(() => {
+        if (prefersReducedMotion) {
+          return;
+        }
+        sr.reveal(revealIcon1.current, srConfig(2000));
+        sr.reveal(revealIcon2.current, srConfig(2000));
+      }, []);
+
     window.addEventListener("scroll", () => {
         setScroll(window.scrollY)
       });
@@ -172,13 +188,14 @@ export const NavMenuNew = () => {
     return (
         <NavMenuStyles navBarPosition={navBarPosition} >
             <div className="items__container" >
-                <SocialLogo className='logo' svg={LeoMorenoLogo} href="#" filled dimensions={3.5} />
+                <SocialLogo revealIcon={revealIcon1} className='logo' svg={LeoMorenoLogo} href="/" filled dimensions={3.5} target="" />
                 <div
                     className="mobile-menu-icon"
                     onClick={() => setShowNav(!showNav)}
                     role="button"
                     tabIndex={0}
                     onKeyDown={() => setShowNav(!showNav)}
+                    ref={revealIcon2}
                 >
                     <MdMenu color={'var(--secondary)'} />
                 </div>
@@ -194,7 +211,7 @@ export const NavMenuNew = () => {
                     </div>
                     <div className="items">
                     <li>
-                    <a className= "active" href="#home">
+                    <a className= "active" href="/#home">
                     <div
                         
                         onClick={(e) => {
@@ -208,7 +225,7 @@ export const NavMenuNew = () => {
                     </a>
                     </li>
                     <li>
-                    <a className= "active" href="#about">
+                    <a className= "active" href="/#about">
                     <div
                         
                         onClick={(e) => {
@@ -222,7 +239,7 @@ export const NavMenuNew = () => {
                     </a>
                     </li>
                     <li>
-                    <a className= "active" href="#skills">
+                    <a className= "active" href="/#skills">
                     <div
                         
                         onClick={(e) => {
@@ -236,7 +253,7 @@ export const NavMenuNew = () => {
                     </a>
                     </li>
                     <li>
-                    <a className= "active" href="#projects">
+                    <a className= "active" href="/#projects">
                     <div
                         
                         onClick={() => {
@@ -250,7 +267,7 @@ export const NavMenuNew = () => {
                     </a>
                     </li>
                     <li>
-                    <a className= "active" href="#contact" >
+                    <a className= "active" href="/#contact" >
                     <div
                         onClick={() => {
                         setShowNav(!showNav);

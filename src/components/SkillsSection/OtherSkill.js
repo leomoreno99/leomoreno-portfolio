@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Ptext from "./Ptext";
-import SectionTitle from "./SectionTitle";
+import Ptext from "../Ptext";
+import SectionTitle from "../SectionTitle";
 import SkillList from "./SkillList";
 
 const OtherSkillStyle = styled.div`

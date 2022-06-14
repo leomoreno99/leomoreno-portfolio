@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { css } from 'styled-components'
-import { ExternalLinkIcon, GitHubIcon } from '../assets/images/svgs'
+import { ExternalLinkIcon, GitHubIcon } from '../../assets/images/svgs'
 import ProjectIcon from './ProjectIcon'
 
 const ProjectSectionStyle = styled.div`
@@ -36,7 +36,7 @@ margin-top: 2.5rem;
             position: relative;
             width: 100%;
             height: 100%;
-            background-color: var(--tertiary);
+            background-color: ${(props)=>props.clsName === 'theme5'? 'var(--primary)':'var(--tertiary)'};
             .img {
                 position: relative;
                 filter: grayscale(100%) contrast(1) brightness(90%);
@@ -236,9 +236,9 @@ margin-top: 2.5rem;
 
 `
 
-export const Project = ({title='Title', children='Descripcion de ejemplo', tecnologies=['Tec1', 'Tec2'], links=['#', '#'], img, external=false, $mode=''}) => {
+export const Project = ({ revealProject, title='Title', children='Descripcion de ejemplo', tecnologies=['Tec1', 'Tec2'], links=['#', '#'], img, external=false, $mode='', tema}) => {
   return (
-    <ProjectSectionStyle $mode={$mode} >
+    <ProjectSectionStyle $mode={$mode} ref={revealProject} clsName={tema} >
         <div className='project__container'>
             <div className='project_information'>
                 <h1 className='title_project'>{title}</h1>

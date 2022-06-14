@@ -19,8 +19,8 @@ const GlobalStyles = createGlobalStyle`
       --black: black; */
 
       //Transitions
-      --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-      
+      /* --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1); */
+      --transition: .15s cubic-bezier(.4,0,.2,1);
 
       //Themes
     /* .theme1 {
@@ -79,34 +79,36 @@ const GlobalStyles = createGlobalStyle`
 
     .theme2 {
       transition-duration:  1s;
-      --primary: #400041;
-      --secondary: #C4145D; 
+      --primary: #41003A;
+      --secondary: #D7D3CF; 
       --tertiary: #B0889E;
-      --quaternary: #3D0052;
+      --quaternary: #52004A;
     }
 
     .theme3 {
       transition-duration:  1s;
       --primary: #000E41;
-      --secondary: #1B58F6; 
+      --secondary: #C4145D; //1B58F6
       --tertiary: #8893B0;
       --quaternary: #001752;
     }
 
+    // este no me gusta mucho
     .theme4 {
       transition-duration:  1s;
-      --primary: #411F00;
-      --secondary: #C46814; 
+      --primary: #1E1E1E;
+      --secondary: #ED5210; 
       --tertiary: #B09688;
       --quaternary: #522200;
     }
 
+    // Mmmm este no me gusta nada
     .theme5 {
       transition-duration:  1s;
-      --primary: #014100;
-      --secondary: #14C430; 
-      --tertiary: #88B093;
-      --quaternary: #005212;
+      --primary: #E8E5E2;
+      --secondary: #1E1E1E; 
+      --tertiary: #4D4C4C;
+      --quaternary: #C1D6D2;
     }
   }
 
