@@ -29,6 +29,7 @@ margin-top: 2.5rem;
                     return css`
                         grid-column: 1 / 8 ;
                     `;
+                    default:
                 }
         }}
        .wrapper {
@@ -83,6 +84,7 @@ margin-top: 2.5rem;
                     grid-column: 7 / -1;
                     text-align: right;
                 `;
+                default:
             }
         }}
         .title_project {
@@ -143,6 +145,7 @@ margin-top: 2.5rem;
                     return css`
                         justify-content: flex-end;
                     `;
+                    default:
                 }
             }}
         }

@@ -48,7 +48,7 @@ export const ProjectsSection = ({tema}) => {
     sr.reveal(revealProject2.current, srConfig());
     sr.reveal(revealProject3.current, srConfig());
     console.log(revealProject1)
-  }, []);
+  }, [prefersReducedMotion]);
 
   const abrirGitHub = () => {
     window.open(githubURL, "_blank");
