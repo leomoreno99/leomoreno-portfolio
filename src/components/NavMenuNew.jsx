@@ -179,7 +179,7 @@ export const NavMenuNew = () => {
     }
     sr.reveal(revealIcon1.current, srConfig(2000));
     sr.reveal(revealIcon2.current, srConfig(2000));
-  }, []);
+  }, [prefersReducedMotion]);
 
   window.addEventListener("scroll", () => {
     setScroll(window.scrollY);

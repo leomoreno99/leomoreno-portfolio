@@ -55,7 +55,7 @@ export default function ContactSection() {
           return;
         }
         sr.reveal(revealContainer.current, srConfig());
-      }, []);
+      }, [prefersReducedMotion]);
 
   return (
     <ContactSectionStyles ref={revealContainer} >

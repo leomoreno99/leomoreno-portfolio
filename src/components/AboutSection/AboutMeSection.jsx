@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components'
 import Ptext from '../Ptext'
 import SectionTitle from '../SectionTitle'
@@ -111,7 +111,7 @@ export const AboutMeSection = ({tema}) => {
           return;
         }
         sr.reveal(revealContainer.current, srConfig());
-      }, []);
+      }, [prefersReducedMotion]);
       
 
   return (

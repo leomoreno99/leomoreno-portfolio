@@ -74,7 +74,7 @@ export const SkillsSection = () => {
           return;
         }
         sr.reveal(revealContainer.current, srConfig());
-      }, []);
+      }, [prefersReducedMotion]);
 
   return (
     <SkillsStyle id="skills" arrow={arrow} ref={revealContainer} >

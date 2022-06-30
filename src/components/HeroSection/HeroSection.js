@@ -153,7 +153,7 @@ export default function HeroSection() {
         sr.reveal(button1Reveal.current, srConfig(2600));
         sr.reveal(button2Reveal.current, srConfig(2800));
         sr.reveal(info2Reveal.current, srConfig(3000));
-      }, []);
+      }, [prefersReducedMotion]);
   
   const scroll = () => {
     console.log("scroll");
