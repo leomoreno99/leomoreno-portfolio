@@ -3,31 +3,33 @@ import styled from "styled-components";
 
 const SocialLogoStyles = styled.div`
   svg {
-    width: 3rem;
-    height: 3rem;
+    width: ${(props)=>props.dimensions}rem;
+    height: ${(props)=>props.dimensions}rem;
     transition: 0.3s;
-    fill: var(--contact-color);
+    stroke: ${(props)=> props.filled ? 'transparent' : 'var(--secondary)' };
+    fill: ${(props)=> props.filled ? 'var(--secondary)' : 'transparent' };
   }
 
   svg:hover {
-    fill: var(--tertiary);
+    stroke: ${(props)=> props.filled ? 'transparent' : 'var(--tertiary)' };
+    fill: ${(props)=> props.filled ? 'var(--tertiary)' : 'transparent' };
   }
 
   @media only screen and (max-width: 768px) {
     svg {
-      width: 2.5rem;
-      height: 2.5rem;
+      width: ${(props)=>props.dimensions-0.5}rem;
+      height: ${(props)=>props.dimensions-0.5}rem;
     }
   }
 `;
 
-export default function SocialLogo({ svg, href = "#" }) {
+export default function SocialLogo({revealIcon, svg, href = "#", filled=false, dimensions=3, target="_blank" }) {
   const { viewBox, path, fillRule, transform } = svg;
   return (
-    <SocialLogoStyles>
-      <a href={href} target="_blank" rel="noreferrer">
+    <SocialLogoStyles filled={filled} dimensions={dimensions} ref={revealIcon} >
+      <a href={href} target={target} rel="noreferrer">
         <svg viewBox={viewBox}>
-          <g fill-rule={fillRule} transform={transform}>
+          <g fillRule={fillRule} transform={transform}>
             {path}
           </g>
         </svg>
