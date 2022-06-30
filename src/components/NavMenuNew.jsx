@@ -161,13 +161,15 @@ export const NavMenuNew = () => {
   const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
-    if (scroll > scroll2) {
-      setNavBarPosition(true);
-    } else {
-      setNavBarPosition(false);
+    if (scroll2 !== scroll){
+      if (scroll > scroll2) {
+        setNavBarPosition(true);
+      } else {
+        setNavBarPosition(false);
+      }
+      setScroll2(scroll);
     }
-    setScroll2(scroll);
-  }, [scroll]);
+  }, [scroll, scroll2]);
 
   useEffect(() => {
     click ? setNavBarPosition(true) : setNavBarPosition(false);

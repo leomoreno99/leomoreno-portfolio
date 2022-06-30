@@ -132,7 +132,7 @@ export const AboutMeSection = ({tema}) => {
                         <img
                             className="img"
                             src={Perfil}
-                            alt="perfil"
+                            alt="Leo Moreno Perfil"
                         />
                     </div>
                 </div>
