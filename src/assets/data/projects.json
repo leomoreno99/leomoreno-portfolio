@@ -1,14 +1,20 @@
 {
     "eCommerce": {
         "title": "Mini e-commerce",
-        "description": "Consumo una API de productos, la cual utilizo para mostrar los productos por pantalla,  ver el detalle del mismo, agregarlos a un carrito y la lista detallada de los productos del carrito.",
-        "tecnologies": ["React.js", "Material UI", "Redux", "Dexie", "Netlify"],
-        "links": ["puta", "madre"]
+        "description": "Consumo una API de productos, la cual utilizo para mostrar los productos por pantalla, ver el detalle del mismo, agregarlos a un carrito y la lista detallada del carrito.",
+        "tecnologies": ["React.js", "Material UI", "Redux", "Dexie", "Netlify", "Etc..."],
+        "links": ["https://github.com/leomoreno99/mini-ecommerce-curso-react-pilartecno", "https://ecommerce-curso-pilartecno.netlify.app/"]
     },
     "tiendaCucco": {
         "title": "Tienda Repuestos",
-        "description": "Una tienda online creada como trabajo final para una materia de la universidad, donde tuvimos que crear el Frontend, Backend y base de datos lo cual hicimos utilizando la arquitectura REST.",
-        "tecnologies": ["Figma", "React.js", "Material UI", "Netlify"],
-        "links": ["putita"]
+        "description": "Una tienda online creada como trabajo final para una materia de la universidad, donde creamos el Frontend, Backend y base de datos, lo cual hicimos utilizando la arquitectura REST.",
+        "tecnologies": ["React.js", "Styled Components", "Node.js", "MongoDB", "Etc..."],
+        "links": ["https://github.com/leomoreno99/cucco-repuestos-frontend"]
+    },
+    "abmTourism": {
+        "title": "ABM Turismo",
+        "description": "Proyecto final para el curso de MERN de PilarTecno, donde construí el Frontend, Backend, base de datos y App Mobile de un ABM de lugares turísticos de La Rioja.",
+        "tecnologies": ["React.js", "React Native", "Node.js", "Express", "MongoDB", "Etc..."],
+        "links": ["https://github.com/leomoreno99/integrador-pilartecno"]
     }
 }

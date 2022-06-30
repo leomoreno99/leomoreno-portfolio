@@ -241,7 +241,7 @@ export const Project = ({ revealProject, title='Title', children='Descripcion de
     <ProjectSectionStyle $mode={$mode} ref={revealProject} clsName={tema} >
         <div className='project__container'>
             <div className='project_information'>
-                <h1 className='title_project'>{title}</h1>
+                <a href={links[1]?links[1]:links[0]} target="_blank" rel='noreferrer' ><h1 className='title_project'>{title}</h1></a>
                 <p className='description_project'>
                     {children}
                 </p>
@@ -254,6 +254,7 @@ export const Project = ({ revealProject, title='Title', children='Descripcion de
                 </div>
             </div>
             <div className='project_img'>
+            <a href={links[1]?links[1]:links[0]} target="_blank" rel='noreferrer' >
                 <div className="wrapper">
                     <img
                         className="img"
@@ -261,6 +262,7 @@ export const Project = ({ revealProject, title='Title', children='Descripcion de
                         alt="project_img"
                     />
                 </div>
+            </a>
             </div>
         </div>
     </ProjectSectionStyle>

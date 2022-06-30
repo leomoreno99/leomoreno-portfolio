@@ -29,7 +29,7 @@ export default function SocialLogo({revealIcon, svg, href = "#", filled=false, d
     <SocialLogoStyles filled={filled} dimensions={dimensions} ref={revealIcon} >
       <a href={href} target={target} rel="noreferrer">
         <svg viewBox={viewBox}>
-          <g fill-rule={fillRule} transform={transform}>
+          <g fillRule={fillRule} transform={transform}>
             {path}
           </g>
         </svg>

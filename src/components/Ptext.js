@@ -4,6 +4,7 @@ import styled from "styled-components";
 const PStyle = styled.div`
   max-width: 890px;
   font-size: 2.2rem;
+  font-family: 'Inter Regular';
   color: var(--tertiary);
   @media only screen and (max-width: 860px) {
     font-size: 1.8rem;

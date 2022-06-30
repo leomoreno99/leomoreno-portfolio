@@ -10,6 +10,7 @@ const ButtonStyle = styled.div`
   position: relative;
   .button {
     font-size: 2.2rem;
+    font-family: 'Inter Regular';
     background-color: ${(props) =>
       props.outline ? "var(--primary)" : "var(--secondary)"};
     padding: 1.5rem 2em;

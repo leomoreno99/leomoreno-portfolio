@@ -35,8 +35,12 @@ const NotFoundStyles = styled.div`
 
   h1 {
     color: var(--secondary);
-    font-size: 6rem;
+    font-size: 5.4rem;
+    font-family: 'Inter Bold';
     text-align: center;
+    span {
+      font-family: 'Segoe UI Emoji';
+    }
   }
   img {
     max-width: 40rem;
@@ -47,7 +51,17 @@ const NotFoundStyles = styled.div`
     h1 {
       font-size: 4rem;
     }
+    .item__container {
+      padding: 1rem 0;
+    }
   }
+
+  @media only screen and (max-width: 480px) {
+        .button-wrapper {
+          width: 100%;
+          text-align: center;
+        }
+      }
 `;
 
 export const PageNotFound = () => {
@@ -71,9 +85,9 @@ export const PageNotFound = () => {
         </div>
       </div>
       <div className="container">
-        <h1>Uy! Esta página no existe ☹️</h1>
+        <h1>Uy! Esta página no existe <span>☹️</span></h1>
         <img src={Meme} alt="meme" />
-        <Button btnText="Ir a Inicio" onClick={goHome} outline />
+        <Button btnText="Ir a inicio" onClick={goHome} outline />
         <SocialLogos github />
         <Credits />
       </div>

@@ -5,12 +5,14 @@ import SectionTitle from '../SectionTitle'
 import projects from '../../assets/data/projects.json'
 import imgEc from "../../assets/images/projects_images/ecommerce.png"
 import imgCucco from "../../assets/images/projects_images/cucco.png"
+import intPilar from "../../assets/images/projects_images/integrador_pilartecno.png"
 import Button from "../Button";
 import usePrefersReducedMotion from '../../hooks/usePrefersReducedMotion'
 import sr from '../../utils/sr'
 import { srConfig } from '../../config'
+import { githubURL } from '../../assets/data/links'
 
-const { eCommerce, tiendaCucco } = projects
+const { eCommerce, tiendaCucco, abmTourism } = projects
 
 const ProjectsSectionStyle = styled.div`
     margin-bottom: 18rem;
@@ -33,6 +35,7 @@ export const ProjectsSection = ({tema}) => {
   const revealTitle = useRef(null);
   const revealProject1 = useRef(null);
   const revealProject2 = useRef(null);
+  const revealProject3 = useRef(null);
   const revealButton = useRef(null);
   const prefersReducedMotion = usePrefersReducedMotion();
 
@@ -43,8 +46,13 @@ export const ProjectsSection = ({tema}) => {
     sr.reveal(revealTitle.current, srConfig());
     sr.reveal(revealProject1.current, srConfig());
     sr.reveal(revealProject2.current, srConfig());
+    sr.reveal(revealProject3.current, srConfig());
     console.log(revealProject1)
   }, []);
+
+  const abrirGitHub = () => {
+    window.open(githubURL, "_blank");
+  };
 
   return (
     <ProjectsSectionStyle id='projects'>
@@ -56,8 +64,11 @@ export const ProjectsSection = ({tema}) => {
             <Project revealProject={revealProject2} title={tiendaCucco.title} tecnologies={tiendaCucco.tecnologies} links={tiendaCucco.links} img={imgCucco} tema={tema} >
               {tiendaCucco.description}
             </Project>
+            <Project revealProject={revealProject3} title={abmTourism.title} tecnologies={abmTourism.tecnologies} links={abmTourism.links} img={intPilar} $mode='reverse' tema={tema} >
+              {abmTourism.description}
+            </Project>
             <div className='button__container'>
-              <Button revealButton={revealButton} btnText='Ver más' outline/>
+              <Button revealButton={revealButton} onClick={abrirGitHub} btnText='Ver más' outline/>
             </div>
         </div>
     </ProjectsSectionStyle>

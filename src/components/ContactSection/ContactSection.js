@@ -7,6 +7,7 @@ import { srConfig } from "../../config";
 import sr from "../../utils/sr";
 import { Credits } from "../Credits";
 import { SocialLogos } from "../SocialLogos";
+import { linkedinURL } from "../../assets/data/links";
 
 const ContactSectionStyles = styled.div`
   width: 100%;
@@ -25,6 +26,9 @@ const ContactSectionStyles = styled.div`
 
     .contact_description {
       padding: 0 20%;
+      a {
+        color: var(--secondary);
+      }
     }
 
     .social {
@@ -59,8 +63,8 @@ export default function ContactSection() {
         <SectionTitle heading="Contacto" negative />
         <div className="contact_description">
           <Ptext >
-            Si tienes una solicitud o pregunta, no dudes en contactarme a través
-            de mi Linkedin o mis otras redes sociales.
+            Si tienes alguna solicitud o pregunta, no dudes en contactarme a través
+            de <a href={linkedinURL} target='_blank' rel="noreferrer" >mi Linkedin</a> o por alguno de estos medios de contacto.
           </Ptext>
         </div>
         

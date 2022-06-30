@@ -2,10 +2,11 @@ import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import Ptext from '../Ptext'
 import SectionTitle from '../SectionTitle'
-import Perfil from '../../assets/images/Perfil.jpg'
+import Perfil from '../../assets/images/Perfil.png'
 import sr from '../../utils/sr'
 import usePrefersReducedMotion from '../../hooks/usePrefersReducedMotion'
 import { srConfig } from '../../config'
+import { instagramURL } from '../../assets/data/links'
 
 const AboutSectionStyle = styled.div`
 margin-bottom: 7.7rem;
@@ -22,14 +23,22 @@ margin-bottom: 7.7rem;
 
         p p {
             margin-bottom: 0.7rem;
+
+            a {
+                color: var(--secondary);
+            }
         }
     }
 
     .img__container {
         position: relative;
         max-width: 300px;
+        @media (max-width: 860px) {
+            max-width: 200px
+        }
         @media (max-width: 768px) {
             margin: 50px auto 0;
+            max-width: 300px;
             width: 70%;
         }
         .wrapper {
@@ -83,9 +92,7 @@ margin-bottom: 7.7rem;
 }
 
 @media only screen and (max-width: 768px) {
-    .container {
-        padding: 0;
-    }
+    padding: 0;
     .information__container {
         flex-direction: column;
         gap: 0;
@@ -97,7 +104,6 @@ margin-bottom: 7.7rem;
 
 export const AboutMeSection = ({tema}) => {
     const revealContainer = useRef(null);
-    // const [prueba, setPrueba] = useState(document.getElementsByTagName('body'));
     const prefersReducedMotion = usePrefersReducedMotion();
 
     useEffect(() => {
@@ -118,12 +124,9 @@ export const AboutMeSection = ({tema}) => {
                         <p>Soy estudiante avanzado de Ingeniería en Sistemas. Me gusta el desarrollo web, siempre estoy profundizando conocimientos sobre ello y sobre nuevas tecnologías. Amante del arte en todo su esplendor.</p>
                         <p>Soy bueno socializando con los demás, no tengo inconvenientes al hablar en público o dar mi opinión.</p>
                         <p>Me considero bueno organizándome, resolviendo problemas y trabajando en equipo.</p>
-                        <p>Tengo una gran creatividad, soy músico, hago arte digital, diseño gráfico y diseño UX/UI.</p>
+                        <p>Tengo una gran creatividad, soy músico, <a href={instagramURL} target="_blank" rel='noreferrer' >hago arte digital</a>, diseño gráfico y diseño UX/UI.</p>
                     </Ptext>
                 </div>
-                {/* <div className='image'>
-                    <img src={Perfil} alt='me'/>
-                </div> */}
                 <div className='img__container'>
                     <div className="wrapper">
                         <img

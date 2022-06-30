@@ -29,7 +29,7 @@ export default function ProjectIcon({ svg, dimensions = 2.2, href = "#" }) {
     <ProjectIconStyles dimensions={dimensions} >
       <a href={href} target="_blank" rel="noreferrer">
         <svg viewBox={viewBox}>
-          <g fill-rule={fillRule} transform={transform}>
+          <g fillRule={fillRule} transform={transform}>
             {path}
           </g>
           {defs}
