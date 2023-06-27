@@ -8,7 +8,7 @@ const SocialLogosStyles = styled.div`
   flex-direction: row;
   gap: 4.6rem;
   margin-top: 10rem;
-  margin-bottom: 5rem;
+  margin-bottom: 20rem;
 
   @media only screen and (max-width: 768px) {
     gap: 3rem !important;
