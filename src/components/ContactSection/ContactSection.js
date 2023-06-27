@@ -5,7 +5,6 @@ import SectionTitle from "../SectionTitle";
 import usePrefersReducedMotion from "../../hooks/usePrefersReducedMotion";
 import { srConfig } from "../../config";
 import sr from "../../utils/sr";
-import { Credits } from "../Credits";
 import { SocialLogos } from "../SocialLogos";
 import { linkedinURL } from "../../assets/data/links";
 
