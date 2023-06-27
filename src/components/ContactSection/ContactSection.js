@@ -69,8 +69,6 @@ export default function ContactSection() {
         </div>
         
         <SocialLogos />
-
-      // <Credits />
       </div>
     </ContactSectionStyles>
   );
