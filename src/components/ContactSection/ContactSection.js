@@ -70,7 +70,7 @@ export default function ContactSection() {
         
         <SocialLogos />
 
-        <Credits />
+       // <Credits />
       </div>
     </ContactSectionStyles>
   );
